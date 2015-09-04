@@ -117,7 +117,11 @@ Note: The widths are measured in rem
 ## Say goodbye to <strong class="higher">wells</strong>
 
 
-![](thering.jpg)<!-- .element: class="fragment " data-fragment-index="1" -->
+![](thering.jpg)<!-- .element: class="fragment " data-fragment-index="0" -->
+
+<small class="fragment " data-fragment-index="0" >
+Attribution: http://i.ytimg.com/vi/jiFnuF5DU7Y/maxresdefault.jpg
+</small>
 
 ----
 
