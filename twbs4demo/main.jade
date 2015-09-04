@@ -1,0 +1,189 @@
+head
+  title bs4 demo
+body
+  .container
+    hr
+    .row
+       .col-md-4
+        h1 Example Card
+       .col-md-4
+         .card
+           +image
+           .card-block
+             h4.card-title Yui Hatano
+             p.card-text
+               | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+             a.btn.btn-primary(href='#') Button
+        
+      p Attribution:
+        a https://commons.wikimedia.org/wiki/File:%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3_(1).jpg
+    hr
+    .row
+      .col-md-4
+        h1 Card with lists and links
+      .col-md-4
+        .card
+          +image
+          .card-block
+            h4.card-title Card title
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+          ul.list-group.list-group-flush
+            li.list-group-item Cras justo odio
+            li.list-group-item Dapibus ac facilisis in
+            li.list-group-item Vestibulum at eros
+          .card-block
+            a.card-link(href='#') Card link
+            a.card-link(href='#') Another link
+    hr
+    .row
+      .col-md-4
+        h1 Card with lists and links
+      .col-md-4
+        .card
+          .card-block
+            h4.card-title Card title
+            h6.card-subtitle text-muted Support card subtitle
+          +image
+          .card-block
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+          .card-block
+            a.card-link(href='#') Card link
+            a.card-link(href='#') Another link
+    hr
+    .row
+      h1 Cards are block-level by default
+      p.white  They’ll fill the available horizontal space
+      .col-md-4.bordered
+        h4.white   .col-md-4
+        +simpleCard
+      .col-md-4.bordered
+        h4.white   .col-md-4
+        +simpleCard
+      .col-md-4.bordered
+        h4.white   .col-md-4
+        +simpleCard
+    hr
+    .row
+      h1 Alignment with only one class
+      .col-md-4
+        .card
+          .card-block
+            h4.card-title Card title
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            a.btn.btn-primary Go somewhere
+      .col-md-4
+        .card
+          .card-block.text-center
+            h4.card-title Card title
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            a.btn.btn-primary Go somewhere
+      .col-md-4
+        .card
+          .card-block.text-right
+            h4.card-title Card title
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            a.btn.btn-primary Go somewhere
+    hr
+    .row
+      .col-md-4
+        h1 Image overlays
+      .col-md-6
+        .card.card-inverse
+          +image height=400
+          .card-img-overlay
+            h4.card-title Card title
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            p.card-text
+              small.text-muted Last updated 3 mins ago
+    hr
+    .row
+        h1 Card Group
+        .card-group
+          +simpleCard
+          +simpleCard
+          +simpleCard
+
+    hr
+    .row
+        h1 Card Deck
+        h3.white A set of equal width and height cards that aren't attached to one another.
+        .card-deck-wrapper
+          .card-deck
+            +simpleCard text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+            +simpleCard text="This card has supporting text below as a natural lead-in to additional content."
+            +simpleCard text="This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
+
+    //- hr
+    //- .row
+    //-     h1 Card Columns
+    //-     .col-md-12
+    //-       +cardColumns
+        
+template(name="cardColumns")
+  .card-columns
+    .card
+        +image
+        .card-block
+          h4.card-title Card title that wraps to a new line
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      .card.card-block
+        blockquote.card-blockquote
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          footer
+            small.text-muted
+              | Someone famous in 
+              cite(title='Source Title') Source Title
+      .card
+        +image
+        .card-block
+          h4.card-title Card title
+          p.card-text This card has supporting text below as a natural lead-in to additional content. 
+          p.card-text
+            small.text-muted Last updated 3 mins ago
+      .card.card-block.card-inverse.card-primary.text-center
+        blockquote.card-blockquote
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.
+          footer
+            small
+              | Someone famous in 
+              cite(title='Source Title') Source Title
+      .card.card-block.text-center
+        h4.card-title Card title
+        p.card-text This card has supporting text below as a natural lead-in to additional content.
+        p.card-text
+          small.text-muted Last updated 3 mins ago
+      .card
+        +image
+      .card.card-block.text-right
+        blockquote.card-blockquote
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          footer
+            small.text-muted
+              | Someone famous in 
+              cite(title='Source Title') Source Title
+      .card.card-block
+        h4.card-title Card title
+        p.card-text
+          | This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+        p.card-text
+          small.text-muted Last updated 3 mins ago
+
+
+template(name="image")
+  if height 
+    img.card-img-top.custom-img(src='/yui.jpg' width="100%" height="{{height}}px")
+  else
+    img.card-img-top.custom-img(src='/yui.jpg' width="100%" height="200px")
+template(name="simpleCard")
+  .card
+    +image
+    .card-block
+      h4.card-title Card title
+      if text
+        p {{text}}
+      else
+        p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+    

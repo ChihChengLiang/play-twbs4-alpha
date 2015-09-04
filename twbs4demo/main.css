@@ -1,0 +1,21 @@
+.custom-img{
+  object-fit:  cover;
+}
+body{
+  background-color: #563d7c;
+}
+.card{
+  background-color: white;
+}
+h1, .white{
+  color: white
+}
+
+.row{
+  height: 600px;
+}
+.bordered{
+  border-style: dotted;
+  border-color: white;
+  border-width: 2px;
+}
